@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="newstyle.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap">
+</head>
+<body>
+    
+    <section>
+        <h1>Maths Quiz Game :)</h1>
+        <div class="centerdiv">
+            <div class="insertBox">
+                <div class="box1">
+                    <input type="text" id="v1">
+                </div>
+                <div class="box1">
+                    <p>+</p>
+                </div>
+                <div class="box1">
+                    <input type="text" id="v2">
+                </div>
+            </div>
+
+            <div class="middleBox">
+                <input type="text" id="answer">
+            </div>
+            <div class="sentBox">
+                <button onclick="jsGame()">Check Answer</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let n1 = Math.floor(Math.random()*10+1);
+        let n2 = Math.floor(Math.random()*10+1);
+
+        document.getElementById('v1').value = n1;
+        document.getElementById('v2').value = n2;
+
+        let ans = n1 + n2;
+        const jsGame = ()=> {
+            var usera = document.getElementById('answer').value;
+            if(usera == ans)
+            {
+                alert('Well Done! Your Answer is correct.');
+            }else{
+                alert('Correct answer is ' + ans + '. Try Again.');
+            }
+         document.getElementById('answer').value = "";   
+         n1 = Math.floor(Math.random()*10+1);
+         n2 = Math.floor(Math.random()*10+1);
+
+        document.getElementById('v1').value = n1;
+        document.getElementById('v2').value = n2;
+
+         ans = n1 + n2;
+        }
+        console.log(ans);
+    </script>
+</body>
+</html>
